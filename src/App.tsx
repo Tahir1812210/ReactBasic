@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import Alert from './components/Alert';
-import Buttons from './components/Buttons';
+import Buttons from './components/Buttons/Buttons';
 import ListGroup from './components/ListGroup';
+import { BsFillCalendarFill } from 'react-icons/bs';
+import Like from './components/Like';
 
 function App() {
   let items = ['New York', 'San Fransisco', 'Tokyo', 'London', 'Paris'];
@@ -26,17 +28,21 @@ function App() {
 
   return (
     <div>
-      {/* <ListGroup
+      <BsFillCalendarFill color="red" size="40" />
+      <ListGroup
         items={items}
         headings="Cities"
         onSelectItem={handleSelectItem}
-      /> */}
+      />
       {/* <Alert>
         Hello <span> World </span>
       </Alert> */}
-      {alertVisible && (
+      {/* {alertVisible && (
         <Alert onClose={() => setAlertVisible(false)}>My Alert</Alert>
-      )}
+      )} */}
+
+      <Like onClick={() => console.log('clicked')} />
+
       <Buttons color="primary" onClick={() => setAlertVisible(true)}>
         My Button
       </Buttons>
